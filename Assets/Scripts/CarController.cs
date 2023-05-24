@@ -1,5 +1,7 @@
 using UnityEngine;
+using System;
 
+[RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour
 {
     private float horizontalInput;
@@ -20,6 +22,16 @@ public class CarController : MonoBehaviour
     public float motorForce = 50f;
     public float brakeForce = 0f;
 
+    private const float AVERAGE_MAX_SPEED = 80f;
+
+    private Rigidbody _rigidbody;
+    public event Action<float, float> SpeedChanged;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
 
     private void FixedUpdate()
     {
@@ -27,6 +39,8 @@ public class CarController : MonoBehaviour
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+
+        SpeedChanged?.Invoke(_rigidbody.velocity.magnitude, AVERAGE_MAX_SPEED);
     }
 
     private void GetInput()
