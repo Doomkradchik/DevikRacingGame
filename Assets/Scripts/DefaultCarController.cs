@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent(typeof(Rigidbody))]
-public class CarController : MonoBehaviour
+public class DefaultCarController : MonoBehaviour
 {
     private float horizontalInput;
     private float verticalInput;

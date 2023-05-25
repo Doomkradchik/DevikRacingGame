@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Speedometer : MonoBehaviour
 {
-    [SerializeField] private CarController carController;
+    [SerializeField] private DefaultCarController carController;
     [SerializeField] private RectTransform arrow;
     [SerializeField] private AngleParams angleParams;
 
