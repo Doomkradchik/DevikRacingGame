@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 
 public class Speedometer : MonoBehaviour
 {
-    [SerializeField] private DefaultCarController carController;
+    [SerializeField] private CarController carController;
     [SerializeField] private RectTransform arrow;
     [SerializeField] private AngleParams angleParams;
 
@@ -13,15 +14,11 @@ public class Speedometer : MonoBehaviour
         public float to;
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        carController.SpeedChanged += OnSpeedChanged;
+        OnSpeedChanged(carController.CurrentSpeed, carController.MaxSpeed);
     }
 
-    private void OnDestroy()
-    {
-        carController.SpeedChanged -= OnSpeedChanged;
-    }
 
     private void OnSpeedChanged(float currentSpeed, float maxSpeed)
     {

@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 23
-  productGUID: 00000000000000000000000000000000
+  productGUID: 1f628e6f3ac8edc4cb40b3908518d771
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -156,7 +156,7 @@ PlayerSettings:
   androidMaxAspectRatio: 16.9
   applicationIdentifier:
     Android: com.SpinMotion.RacingStarterKit
-    Standalone: unity.SpinMotion.RacingStarterKit
+    Standalone: com.DefaultCompany.DevikRacingGame
     Tizen: com.Company.ProductName
     iPhone: com.SpinMotion.RacingStarterKit
     tvOS: com.Company.ProductName
