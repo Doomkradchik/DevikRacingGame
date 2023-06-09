@@ -22,4 +22,9 @@ public class Continue : MonoBehaviour
         FinishCamera.SetActive(false);
         InGameCanvas.SetActive(true);//and the camera goes off too, to use the one in the player car
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
